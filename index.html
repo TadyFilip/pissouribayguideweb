@@ -1,255 +1,343 @@
-<!-- Document type declaration -->
 <!DOCTYPE html>
-<!-- Root HTML element -->
 <html lang="en">
-<!-- Head section: metadata, styles, scripts -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Pissouri Bay - Guide (Combined)</title>
-    <style>
-        /* --- Original site styles (kept and expanded) --- */
-        html { scroll-behavior: smooth; }
-        body { font-family: Verdana, Geneva, sans-serif; background: #d3d3d3; margin:0; padding:0; color:#202020; }
-        #loader { position:fixed; left:0;top:0;right:0;bottom:0;background:#333; z-index:9999; }
-        body.loaded #loader { display:none; }
-        #wrapper { max-width:1100px; margin:0 auto; }
-        header { background:#444; color:#eee; text-align:center; padding:18px 12px; box-shadow:0 2px 0 #222 inset; }
-        header h1 { margin:0; font-size:28px; letter-spacing:1px; }
-        header .tagline { font-size:12px; color:#ccc; margin-top:6px; }
-        marquee { background: linear-gradient(90deg,#3d3d3d,#4f4f4f); color:#fff; padding:6px 0; border-top:2px solid #666; }
-        nav { background:#555; padding:10px; display:flex; justify-content:center; }
-        nav ul { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; }
-        nav ul li { margin:0 4px; }
-        nav ul li a { display:block; padding:10px 16px; color:#f0f0f0; text-decoration:none; font-weight:bold; border:2px solid #888; background: linear-gradient(to bottom,#666,#333); box-shadow: inset 1px 1px #aaa, inset -1px -1px #000; transition:all .15s ease-in-out; }
-        nav ul li a:hover { background: linear-gradient(to bottom,#888,#444); color:#fff; }
-        nav ul li a:active { transform: scale(0.95); box-shadow: 0 0 6px #000 inset; }
-
-        /* style left sidebar content + main */
-        .container { display:flex; gap:18px; padding:18px; }
-        .sidebar { width:260px; background:#efefef; padding:12px; border:2px solid #ccc; box-shadow: 2px 2px 0 rgba(0,0,0,0.08); }
-        .sidebar h3 { margin-top:0; border-bottom:2px double #ccc; padding-bottom:6px; }
-        .main { flex:1; background:#fff; padding:16px; border:2px solid #ddd; min-height:500px; }
-        .section { margin-bottom:22px; }
-        .section h2 { margin:0 0 8px 0; font-size:20px; color:#333; }
-        .muted { color:#666; font-size:13px; }
-
-        /* style buttons */
-        .btn { display:inline-block; padding:8px 12px; border:2px outset #aaa; background: linear-gradient(to bottom,#666,#444); color:#fff; text-decoration:none; font-weight:bold; margin:6px 4px; transition: transform 0.1s ease, box-shadow 0.1s ease; }
-        .btn.ghost { background:#efefef; color:#333; border:2px inset #aaa; }
-        .btn:active, .btn.ghost:active { transform: scale(0.95); box-shadow: 0 0 6px #000 inset; }
-
-        /* Info cards */
-        .card { padding:12px; border:1px solid #ddd; margin-bottom:10px; background:#fafafa; }
-        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-
-        footer { background:#333; color:#ddd; padding:14px; text-align:center; border-top:4px solid #222; }
-        footer a { color:#ddd; text-decoration:none; font-weight:bold; }
-
-        /* Responsive */
-        @media(max-width:900px){ .container{flex-direction:column;} .sidebar{width:100%} nav ul{justify-content:center} }
-
-        /* small touches */
-        .map { border:2px solid #ccc; padding:6px; background:#f7f7f7; margin:12px 0; }
-        .emergency { background:linear-gradient(to bottom,#8b0000,#b22222); color:#fff; padding:10px; border-radius:4px; font-weight:bold; }
-        .footer-small { font-size:12px; opacity:0.85; }
-        .retro-list { list-style:square; margin-left:18px; }
-        .placeholder-img { width:100%; height:200px; background:#aaa; display:flex; align-items:center; justify-content:center; color:#fff; font-size:20px; font-weight:bold; margin-bottom:12px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pissouri Bay Guide</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<!-- Body section: visible content of the page -->
 <body>
-    <div id="loader"></div>
-    <div id="wrapper">
-        <!-- Head section: metadata, styles, scripts -->
-<!-- Header: top section, navigation or branding -->
-<header>
+    <header>
+        <div class="logo-section">
+            <div class="logo">
+                <img src="PBGlogov3transparent.png" alt="Logo" width="70" height="auto">
+            </div>
             <h1>Pissouri Bay Guide</h1>
-            <div class="tagline">All the info and tips about Pissouri Bay.</div>
-        </header>
-        <marquee behavior="scroll" direction="left">Find out more about Pissouri Bay here.</marquee>
-        <!-- Navigation menu -->
-<nav>
-            <ul>
-                <li><!-- Link -->
-<a href="#home">Home</a></li>
-                <li><!-- Link -->
-<a href="#about">About</a></li>
-                <li><!-- Link -->
-<a href="#beaches">Beaches</a></li>
-                <li><!-- Link -->
-<a href="#activities">Things to Do</a></li>
-                <li><!-- Link -->
-<a href="#food">Restaurants & Taverns</a></li>
-                <li><!-- Link -->
-<a href="#stay">Where to Stay</a></li>
-                <li><!-- Link -->
-<a href="#history">History</a></li>
-                <li><!-- Link -->
-<a href="#map">Map</a></li>
-                <li><!-- Link -->
-<a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="container">
-            <!-- Aside: side content or widgets -->
-<aside class="sidebar">
-                <h3>Quick Links</h3>
-                <!-- Link -->
-<a class="btn ghost" href="#beaches">Blue-Flag Beach</a>
-                <!-- Link -->
-<a class="btn ghost" href="#activities">Water Sports</a>
-                <!-- Link -->
-<a class="btn ghost" href="#food">Tavernas</a>
-                <!-- Link -->
-<a class="btn ghost" href="#history">Local History</a>
-                <hr>
-                <div class="card">
-                    <strong>Best months to visit</strong>
-                    <p class="muted">May–October: warm, sunny, beach-perfect. Shoulder seasons quieter.</p>
-                </div>
-                <div class="card">
-                    <strong>Getting there</strong>
-                    <p class="muted">Pissouri Bay is roughly halfway between Limassol and Paphos — about 25-40 min drive from either city depending on traffic.</p>
-                </div>
-                <div class="card">
-                    <strong>Local tip</strong>
-                    <p class="muted">Explore Pissouri Village up on the hill for traditional tavernas and great sunset views.</p>
-                </div>
-            </aside>
-
-            <!-- Main content area -->
-<main class="main">
-                <!-- Section: thematic grouping of content -->
-<section id="home" class="section">
-                    <h2>Welcome to Pissouri Bay</h2>
-                    <img src="720x300welcomeimage.png" alt="Welcome Image" width="720" height="300" style="border: 1px solid #ccc;">
-                    <p>Pissouri Bay is a crescent-shaped coastal area on the southern coast of Cyprus, known for its clean waters, pebble-and-sandy beach and relaxed atmosphere. The bay sits below the charming Pissouri village and is framed by white cliffs in places, offering striking coastal views for walkers and photographers.</p>
-                    <p class="muted">This guide collects history, practical tips, food & stay recommendations and a long list of activities so you can plan a thorough visit.</p>
-                    <div class="map">
-                        <iframe width="100%" height="320" frameborder="0" style="border:0" src="https://www.google.com/maps?q=Pissouri+Bay+Cyprus&output=embed" allowfullscreen></iframe>
-                    </div>
-                </section>
-
-                <!-- Section: thematic grouping of content -->
-<section id="about" class="section">
-                    <h2>About the Bay and Village</h2>
-                    <img src="720x300bayimage.png" alt="Bay and Village" width="720" height="300" style="border: 1px solid #ccc;">
-                    <div class="two-col">
-                        <div>
-                            <p>Pissouri Village is a traditional Cypriot village perched on a ridge overlooking the bay. Historically agricultural, it retains narrow streets, stone houses and a village square lined with tavernas. The bay itself developed into a quieter resort area, with villas, small hotels and guesthouses dotting the coastline.</p>
-                            <p>Visitors commonly combine time on the beach with evenings in the village — enjoying mezze, local wine and live music at seasonal tavernas.</p>
-                        </div>
-                        <div>
-                            <p><strong>Why people love Pissouri Bay</strong></p>
-                            <ul class="retro-list">
-                                <li>Less crowded than larger resorts — relaxed vibe</li>
-                                <li>Good water quality and Blue Flag awards in some years</li>
-                                <li>Easy access to both Limassol and Paphos for day trips</li>
-                                <li>Traditional village culture and good local food</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section: thematic grouping of content -->
-<section id="beaches" class="section">
-                    <h2>Beaches & Coastline</h2>
-                    <img src="200x200Beach25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <img src="200x200Beach25v2.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <img src="200x200Paramali25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <p>Pissouri Beach stretches as a curved bay with a mix of shingle and finer sand. Protected by Cape Aspro's cliffs on one side, the beach offers sheltered water ideal for swimming. The beach is often awarded Blue Flag status — a mark of cleanliness and facilities at times — so you'll find lifeguards and maintained areas in high season.</p>
-                    <div class="card">
-                        <strong>Beach facilities</strong>
-                        <p class="muted">Sunbeds & umbrellas, a handful of watersport vendors, toilets and nearby cafes. Parking is available close to the main beach access points.</p>
-                    </div>
-                    <p><em>Walk the headland</em> — for a short coastal walk with excellent photo opportunities, take the path towards the headland where the cliffs reveal the bay from above.</p>
-                </section>
-
-                <!-- Section: thematic grouping of content -->
-<section id="activities" class="section">
-                    <h2>Things to Do</h2>
-                    <img src="720x300watersportsimage.png" alt="Activities Image" width="720" height="300" style="border: 1px solid #ccc;">
-                    <div class="two-col">
-                        <div>
-                            <h3>Water & Beach</h3>
-                            <ul class="retro-list">
-                                <li>Swimming & sunbathing</li>
-                                <li>Snorkeling along the rocky edges</li>
-                                <li>Kayak and paddleboard hire in season</li>
-                                <li>Boat trips from local operators to nearby coves</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Land & Culture</h3>
-                            <ul class="retro-list">
-                                <li>Explore Pissouri Village: tavernas, shops, and village festivals</li>
-                                <li>Hiking in nearby hills and short coastal trails</li>
-                                <li>Day trips to Kourion archaeological site and ancient amphitheatre</li>
-                                <li>Wine-tasting tours in Limassol/Paphos region</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section: thematic grouping of content -->
-<section id="food" class="section">
-                    <h2>Restaurants and Taverns</h2>
-                    <img src="200x200BayAmpeli25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <img src="200x200souvlaki25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <img src="200x200yiota25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <p>The area offers a mix of family-run tavernas and resort restaurants. Expect classic Cypriot mezze, fresh fish, grilled meats, halloumi and locally produced wines. Dining tends to be casual and friendly — ask locals for the day's catch and house specials.</p>
-                    <div>
-                            <h3>Restaurants to visit:</h3>
-                            <ul class="retro-list">
-                                <li>Ampeli Restaurant</li>
-                                <li>Melanda Beach Restaurant</li>
-                                <li>The Bay Tree</li>
-                                <li>Hill View Restaurant</li>
-                                <li>Το σπιτικό της Γιώτας Εστιατόριο</li>
-                                <li>The Little Cafe On The Corner</li>
-                            </ul>
-                        </div>
-                </section>
-
-                <!-- Section: thematic grouping of content -->
-<section id="stay" class="section">
-                    <h2>Where to Stay</h2>
-                    <img src="200x200Skeleas25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <img src="200x200hylatio25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <img src="200x200columbia25.png" alt="Placeholder Image" width="230" height="230" style="border: 1px solid #ccc;">
-                    <p>Pissouri Bay offers small hotels, family-run guesthouses, villas and a handful of larger resorts. Expect relaxed, low-rise accommodation rather than high-rise developments. Book in advance for July–August.</p>
-                                        <div>
-                            <h3>Places to stay:</h3>
-                            <ul class="retro-list">
-                                <li>Skeleas Pissouri Apartments</li>
-                                <li>Pelekanos Apartments</li>
-                                <li>Columbia Beach Resort</li>
-                                <li>Hylatio Tourist Village</li>
-                            </ul>
-                        </div>
-                </section>
-
-                <!-- Section: thematic grouping of content -->
-<section id="history" class="section">
-                    <h2>History & Local Stories</h2>
-                    <img src="720x300wnightcyprusimage.png" alt="History Image" width="720" height="300" style="border: 1px solid #ccc;">
-                    <p>Pissouri and its bay have a long local history tied to agriculture and coastal fishing. The village architecture and narrow streets reflect the island's rural traditions. We reccommend visiting the Pissouri Village for yearly cyprus nights. Over recent decades the bay developed into a low-key holiday destination favored by travelers seeking tranquility.</p>
-                </section>
-            </main>
         </div>
+        <div class="divider"></div>
+        <nav class="desktop-nav">
+            <button class="nav-btn" onclick="location.href='index.html'">Home</button>
+            <button class="nav-btn" onclick="scrollToSection('about')">About</button>
+            <button class="nav-btn" onclick="scrollToSection('beaches')">Beaches</button>
+            <button class="nav-btn" onclick="scrollToSection('things-to-do')">Things to do</button>
+            <button class="nav-btn" onclick="scrollToSection('restaurants')">Restaurants</button>
+            <button class="nav-btn" onclick="scrollToSection('where-to-stay')">Where to stay</button>
+            <button class="nav-btn" onclick="scrollToSection('history')">History</button>
+            <button class="nav-btn" onclick="location.href='contact.html'">Contact</button>
+        </nav>
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
-        <!-- Footer section -->
-<footer>
-            <div>© Pissouri Bay Guide - 2025 - All rights reserved.</div>
-            <div class="footer-small"></div>
-        </footer>
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="nav-btn-mobile" onclick="location.href='index.html'">Home</button>
+        <button class="nav-btn-mobile" onclick="scrollToSection('about')">About</button>
+        <button class="nav-btn-mobile" onclick="scrollToSection('beaches')">Beaches</button>
+        <button class="nav-btn-mobile" onclick="scrollToSection('things-to-do')">Things to do</button>
+        <button class="nav-btn-mobile" onclick="scrollToSection('restaurants')">Restaurants</button>
+        <button class="nav-btn-mobile" onclick="scrollToSection('where-to-stay')">Where to stay</button>
+        <button class="nav-btn-mobile" onclick="scrollToSection('history')">History</button>
+        <button class="nav-btn-mobile" onclick="location.href='contact.html'">Contact</button>
+    </nav>
+
+    <div class="hero" onclick="scrollToContent()">
+        <img src="HeroImage.pngv2.png" alt="Pissouri Bay">
+        <div class="hero-content">
+            <h2>Discover Pissouri Bay</h2>
+        </div>
     </div>
 
+    <div class="container">
+        <aside class="quick-links">
+            <h3>Quick Links</h3>
+            <button class="quick-link-btn" onclick="scrollToSection('beaches')">Blue-Flag Beach</button>
+            <button class="quick-link-btn" onclick="scrollToSection('things-to-do')">Water Sports</button>
+            <button class="quick-link-btn" onclick="scrollToSection('restaurants')">Tavernas</button>
+            <button class="quick-link-btn" onclick="scrollToSection('history')">Local History</button>
+
+            <div class="info-box">
+                <h4>Best months to visit</h4>
+                <p>May-October: warm, sunny, beach-perfect. Shoulder seasons quieter.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Getting there</h4>
+                <p>Pissouri Bay is roughly halfway between Limassol and Paphos — about 25-40 min drive from either city depending on traffic.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Local tip</h4>
+                <p>Explore Pissouri Village up on the hill for traditional Cypriot tavernas and stunning sunset views.</p>
+            </div>
+        </aside>
+
+        <main class="content" id="main-content">
+            <section id="about" class="content-box">
+                <h2>Welcome to Pissouri Bay</h2>
+                <img src="1365x911aboutbayv1.png" alt="Beautiful bay view" class="section-image">
+                <p>Pissouri Bay is a crescent-shaped coastal area on the southern coast of Cyprus, known for its clean waters, pebble-and-sandy beach and relaxed atmosphere. The bay sits below the charming Pissouri village and is framed by white cliffs in places, offering striking coastal vistas and photo opportunities.</p>
+                <p>This guide collects history, practical tips, food & stay recommendations and a long list of activities so you can plan a thorough visit.</p>
+                <h3>Why Visit Pissouri Bay?</h3>
+                <ul>
+                    <li><strong>Authentic Cypriot Experience:</strong> Less touristy than Ayia Napa or Protaras, offering genuine local culture</li>
+                    <li><strong>Stunning Natural Beauty:</strong> Dramatic cliffs, crystal-clear waters, and unspoiled landscapes</li>
+                    <li><strong>Perfect Location:</strong> Conveniently positioned between Limassol and Paphos</li>
+                    <li><strong>Year-Round Destination:</strong> Mild winters and hot summers make it ideal any time of year</li>
+                    <li><strong>Water Sports Paradise:</strong> Excellent conditions for diving, snorkeling, and various water activities</li>
+                </ul>
+                     <div style="
+   width: 100%;
+   max-width: 1000px;
+   margin: 1.5rem auto;
+   border-radius: 18px;
+   overflow: hidden;
+   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+ ">
+  <iframe
+     src="https://maps.google.com/maps?q=34.65188,32.72699&z=13&output=embed"
+     width="100%"
+     height="400"
+     style="border:0;"
+     allowfullscreen=""
+     loading="lazy"
+     referrerpolicy="no-referrer-when-downgrade"
+   ></iframe>
+ </div>
+   
+            </section>
+
+            <section id="beaches" class="content-box">
+                <h2>Beaches</h2>
+                <img src="1365x911beachv1.png" alt="Beach view" class="section-image">
+                <h3>Pissouri Beach (Blue Flag)</h3>
+                <p>Pissouri Beach has been awarded the Blue Flag status, recognizing its excellent water quality, safety, and environmental management. The beach stretches for approximately 1 kilometer and features a mixture of pebbles and sand.</p>
+                <h4>Beach Facilities:</h4>
+                <ul>
+                    <li>Sun loungers and umbrellas available for rent</li>
+                    <li>Changing rooms and shower facilities</li>
+                    <li>Lifeguard services during summer months</li>
+                    <li>Beachfront tavernas and cafes</li>
+                </ul>
+                <img src="1365x911paramaliv2.png" alt="Beach activities" class="section-image">
+                <h3>Water Quality & Safety</h3>
+                <p>The waters at Pissouri Bay are exceptionally clear and clean, making it perfect for swimming and snorkeling. The bay is generally sheltered, providing calm conditions ideal for families with children. However, be aware that the beach can have a steep drop-off in places, and occasional currents can develop.</p>
+            </section>
+
+            <section id="things-to-do" class="content-box">
+                <h2>Things to Do</h2>
+                <img src="1365x911jetski.png" alt="Water sports" class="section-image">
+                <h3>Water Activities</h3>
+                <p>Pissouri Bay offers an incredible range of water-based activities suitable for all skill levels:</p>
+                <ul>
+                    <li><strong>Scuba Diving:</strong> Several dive centers operate from the bay, offering PADI courses and guided dives to local sites including caves and the famous Amphitrite wreck</li>
+                    <li><strong>Snorkeling:</strong> Excellent visibility and marine life around the rocky areas at both ends of the bay</li>
+                    <li><strong>Kayaking:</strong> Rent kayaks to explore the coastline and hidden coves</li>
+                    <li><strong>Stand-Up Paddleboarding:</strong> The calm waters make it perfect for SUP</li>
+                    <li><strong>Jet Skiing:</strong> Available during peak season</li>
+                    <li><strong>Boat Trips:</strong> Day cruises along the coast departing from the bay</li>
+                </ul>
+                <img src=" " alt="Hiking trails" class="section-image">
+                <h3>Land Activities</h3>
+                <ul>
+                    <li><strong>Hiking:</strong> Multiple trails connect the beach to Pissouri village, offering spectacular views. The Aphrodite Trail is particularly popular</li>
+                    <li><strong>Cycling:</strong> Bike rentals available for exploring the surrounding countryside</li>
+                    <li><strong>Wine Tours:</strong> Visit wineries in Pissouri and in the nearby Troodos areas</li>
+                    <li><strong>Village Exploration:</strong> Wander through Pissouri village's narrow streets and traditional architecture</li>
+                </ul>
+                <h3>Nearby Attractions</h3>
+                <p>Pissouri Bay serves as an excellent base for exploring the region:</p>
+                <ul>
+                    <li>Kourion Archaeological Site (20 min drive) - Ancient Greco-Roman city with stunning amphitheater</li>
+                    <li>Petra tou Romiou (Aphrodite's Rock) - Legendary birthplace of Aphrodite (25 min drive)</li>
+                    <li>Troodos Mountains - Cool mountain villages and Byzantine churches (45 min drive)</li>
+                    <li>Limassol Old Town - Historic city center with castle and marina (35 min drive)</li>
+                    <li>Paphos Archaeological Park - UNESCO World Heritage site (40 min drive)</li>
+                    <li>Pissouri Village - Great local village with Pissouri amphitheater</li>
+                </ul>
+            </section>
+
+            <section id="restaurants" class="content-box">
+                <h2>Restaurants & Dining</h2>
+                <img src="1365x911yiota.png" alt="Mediterranean cuisine" class="section-image">
+                <p>Pissouri Bay boasts an excellent selection of restaurants, from traditional Cypriot tavernas to international cuisine. The beachfront offers several dining options with stunning sea views.</p>
+                <h3>Beachfront Tavernas</h3>
+                <p>The bay's tavernas specialize in fresh seafood and traditional meze. Expect to find:</p>
+                <ul>
+                    <li>Freshly caught fish grilled to perfection</li>
+                    <li>Traditional Cypriot meze (15-20 small dishes)</li>
+                    <li>Grilled halloumi and fresh salads</li>
+                    <li>Souvlaki and kleftiko</li>
+                    <li>Local wines from nearby vineyards</li>
+                </ul>
+                <img src="1365x911souvla.png" alt="Traditional food" class="section-image">
+                <h3>Pissouri Village Restaurants</h3>
+                <p>Head up to the village for more dining options and a cooler evening atmosphere. Many restaurants offer panoramic sunset views over the bay.</p>
+                <h4>Restaurants To Try:</h4>
+                <ul>
+                    <li>Reservations recommended for most restaurants during peak season (July-August)</li>
+                    <li>The Bay Tree</li>
+                    <li>Ampeli Restaurant</li>
+                    <li>Το σπιτικό της Γιώτας Εστιατόριο</li>
+                    <li>Hill View Restaurant</li>
+                    <li>Melanda Beach Restaurant</li>
+                    <li>Wine Leaf Restaurants</li>
+                    <li>The Little Cafe On The Corner</li>
+                </ul>
+                <h3>Local Specialties to Try</h3>
+                <ul>
+                    <li><strong>Meze:</strong> A feast of small dishes - the ultimate Cypriot dining experience</li>
+                    <li><strong>Halloumi:</strong> Grilled Cypriot cheese, a must-try</li>
+                    <li><strong>Souvla:</strong> Large chunks of meat slow-cooked on a spit</li>
+                    <li><strong>Kleftiko:</strong> Slow-cooked lamb cooked in sealed ovens</li>
+                    <li><strong>Fresh Calamari:</strong> Lightly fried and served with lemon</li>
+                    <li><strong>Loukoumades:</strong> Honey-soaked donuts for dessert</li>
+                </ul>
+            </section>
+
+            <section id="where-to-stay" class="content-box">
+                <h2>Where to Stay</h2>
+                <img src="1365x911skeleas.png" alt="Accommodation" class="section-image">
+                <p>Pissouri offers a range of accommodation options to suit all budgets and preferences, from luxury resorts to cozy apartments.</p>
+                <h3>Accommodation Types</h3>
+                <h4>Beachfront Hotels & Resorts</h4>
+                <p>Several hotels are located directly on or near the bay, offering immediate beach access and sea views. These typically include pools, restaurants, and water sports facilities.</p>
+                <h4>Village Apartments & Villas</h4>
+                <p>Pissouri Village offers numerous self-catering apartments and traditional stone villas. These provide a more authentic experience and are perfect for longer stays or families.</p>
+                <img src="1365x911hylatio.png" alt="Villa accommodation" class="section-image">
+                <h4>Rental Properties</h4>
+                <p>Many private villas and apartments are available for short or long-term rent, offering great value especially for groups or families.</p>
+                <h3>Booking Tips</h3>
+                <ul>
+                    <li>Book well in advance for July and August (peak season)</li>
+                    <li>Shoulder seasons (May-June, September-October) offer better rates and fewer crowds</li>
+                    <li>Many properties require minimum stays during peak season</li>
+                    <li>Check if your accommodation includes air conditioning (essential in summer)</li>
+                    <li>Consider location: beach vs. village based on your preferences</li>
+                    <li>Car rental highly recommended for exploring the area</li>
+                </ul>
+                <h3>Popular accommodations:</h3>
+                <ul>
+                    <li>Columbia Beach Hotel</li>
+                    <li>Skeleas Pissouri Apartments</li>
+                    <li>Pelekanos Apartments</li>
+                    <li>Hylatio Tourist Village</li>
+                    <li>Heavens Edge</li>
+                </ul>
+                <h3>What to Expect</h3>
+                <ul>
+                    <li>Most accommodations feature traditional Cypriot architecture</li>
+                    <li>Outdoor terraces and BBQ areas standard in most villas</li>
+                    <li>Many properties offer stunning sea or mountain views</li>
+                </ul>
+            </section>
+
+            <section id="history" class="content-box">
+                <h2>History of Pissouri</h2>
+                <img src="1365x911pissouri.png" alt="Ancient Cyprus" class="section-image">
+                <h3>Ancient Origins</h3>
+                <p>The name "Pissouri" is believed to derive from the Greek word "pissos" meaning pitch or tar, as the area was known for producing this substance in ancient times. The region has been inhabited for thousands of years, with archaeological evidence of settlements dating back to the Neolithic period.</p>
+                <h3>Historical Sites Nearby</h3>
+                <ul>
+                    <li><strong>Kourion:</strong> Magnificent Greco-Roman city ruins with spectacular amphitheater</li>
+                    <li><strong>Sanctuary of Apollo Hylates:</strong> Ancient religious complex dedicated to Apollo</li>
+                    <li><strong>Kolossi Castle:</strong> Medieval fortress built by the Knights of St. John</li>
+                    <li><strong>Old Pissouri Village:</strong> Traditional architecture and narrow streets preserved in the upper village</li>
+                </ul>
+            </section>
+
+            <section class="content-box">
+                <h2>Practical Information</h2>
+                <img src="1365x911shop.png" alt="Cyprus landscape" class="section-image">
+                <h3>Shops</h3>
+                <p>Many shops are located in the Pissouri Bay area, mainly kiosks and Bay Jewellery. More shops like supermarkets and hardware shops are located near Pissouri Village.</p>
+                <h3>Getting to Pissouri Bay</h3>
+                <h4>By Air</h4>
+                <ul>
+                    <li><strong>Paphos Airport:</strong> 50km (approx. 40 minutes drive)</li>
+                    <li><strong>Larnaca Airport:</strong> 85km (approx. 1 hour drive)</li>
+                </ul>
+                <h4>By Car</h4>
+                <p>Pissouri is easily accessible via the A6 motorway connecting Limassol and Paphos. Car rental is highly recommended for exploring the area and is available at both airports and major towns.</p>
+                <h3>Climate & Best Time to Visit</h3>
+                <ul>
+                    <li><strong>Summer (June-September):</strong> Hot and dry, 28-35°C, perfect beach weather</li>
+                    <li><strong>Spring (March-May):</strong> Mild temperatures 18-25°C, wildflowers blooming</li>
+                    <li><strong>Autumn (October-November):</strong> Warm sea temperatures, fewer tourists</li>
+                    <li><strong>Winter (December-February):</strong> Mild and quiet, 15-20°C, some rain</li>
+                </ul>
+                <h3>What to Pack</h3>
+                <ul>
+                    <li>High SPF sunscreen and sun hat (essential year-round)</li>
+                    <li>Comfortable walking shoes for hiking</li>
+                    <li>Snorkeling equipment (though rentals available)</li>
+                    <li>Light, breathable clothing for summer</li>
+                    <li>Light jacket for cooler evenings</li>
+                    <li>Water bottle for staying hydrated</li>
+                    <li>Camera for capturing stunning landscapes</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <button class="footer-link" onclick="location.href='index.html'">Home</button>
+                <button class="footer-link" onclick="scrollToSection('about')">About</button>
+                <button class="footer-link" onclick="scrollToSection('beaches')">Beaches</button>
+                <button class="footer-link" onclick="location.href='contact.html'">Contact</button>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <button class="footer-link" onclick="scrollToSection('things-to-do')">Activities</button>
+                <button class="footer-link" onclick="scrollToSection('restaurants')">Dining</button>
+                <button class="footer-link" onclick="scrollToSection('where-to-stay')">Accommodation</button>
+                <button class="footer-link" onclick="scrollToSection('history')">Local History</button>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <p>Email: info@pissouribayguide.com</p>
+                <p>Phone: +357 25 123 456</p>
+                <p>Follow us for updates and tips</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pissouri Bay Guide. All rights reserved. Your complete guide to Pissouri Bay, Cyprus.</p>
+        </div>
+    </footer>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function(){ console.log('Welcome to Pissouri Bay Retro Guide!'); });
-        window.addEventListener('load', function(){ document.body.classList.add('loaded'); });
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        function scrollToSection(sectionId) {
+            mobileNav.classList.remove('active');
+            hamburger.classList.remove('active');
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function scrollToContent() {
+            document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.querySelectorAll('.nav-btn-mobile').forEach(button => {
+            button.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
